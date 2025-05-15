@@ -54,13 +54,13 @@ sudo nano /etc/resolv.conf
 
 This command removes the immutable attribute from /etc/resolv.conf:
 
-![Extension Popup](to-allow-access.png)
+![Extension Popup](screenshots/to-allow-access.png)
 
 This allows modifications to the file, enabling you to edit or update DNS resolver settings.
 
 This command adds the immutable attribute back to /etc/resolv.conf using:
 
-![Extension Popup](to-give-no-access.png)
+![Extension Popup](screenshots/to-give-no-access.png)
 
 This prevents any changes to the file, protecting it from being overwritten or altered—even by root or network managers.
 
@@ -70,10 +70,10 @@ nameserver <IP_OF_DOMAIN_CONTROLLER>
 ```
 
 At first, when you'll open the `resolve.conf` file, it will look like this:
-![Extension Popup](resolve.conf-original.png)
+![Extension Popup](screenshots/resolve.conf-original.png)
 
 For me, removing the existing nameservers and adding my DC's nameserver worked:
-![Extension Popup](resolve.conf-changed.png)
+![Extension Popup](screenshots/resolve.conf-changed.png)
 
 Remember to change the namervers back after the activity.
 
@@ -146,17 +146,17 @@ Password: `BloodHound`
 
 The login page must look like this:
 
-![Extension Popup](bloodhound-login.png)
+![Extension Popup](screenshots/bloodhound-login.png)
 
 To import the data, go to the file ingest section 
-![Extension Popup](FILE-INGEST.png)
+![Extension Popup](screenshots/FILE-INGEST.png)
 and upload the .json files that we earlier had captured.
 
 After importing the collected data into the BloodHound GUI, several important observations were made:
 
 #### Member Analysis
 
-![Extension Popup](all-the-domain-users-visible.png)
+![Extension Popup](screenshots/all-the-domain-users-visible.png)
 
 #### User Account Analysis
 - User: `ROHANDABIR@SOHAMJADHAV.IN`
@@ -173,11 +173,11 @@ After importing the collected data into the BloodHound GUI, several important ob
     - ADMINISTRATORS@SOHAMJADHAV.IN
     - USERS@SOHAMJADHAV.IN
    
-![Extension Popup](able-to-see-MemberOf.png)
+![Extension Popup](screenshots/able-to-see-MemberOf.png)
 
-![Extension Popup](able-to-see-OU.png)
+![Extension Popup](screenshots/able-to-see-OU.png)
 
-![Extension Popup](details-like-last-logon-etc.png)
+![Extension Popup](screenshots/details-like-last-logon-etc.png)
 
 #### Group Membership Analysis
 - Group: `ADMINISTRATORS@SOHAMJADHAV.IN`
@@ -187,7 +187,7 @@ After importing the collected data into the BloodHound GUI, several important ob
     - ENTERPRISE ADMINS@SOHAMJADHAV.IN
     - DOMAIN ADMINS@SOHAMJADHAV.IN
 
-![Extension Popup](able-to-see-adminstrators.png)
+![Extension Popup](screenshots/able-to-see-adminstrators.png)
 
 #### Domain Users
 - Example User: `BJACKSON@SOHAMJADHAV.IN`
@@ -197,7 +197,7 @@ After importing the collected data into the BloodHound GUI, several important ob
 
 #### Operating System Info of my Domain Controller(DC)
 
-![Extension Popup](OS-visible-of-DC1.png)
+![Extension Popup](screenshots/OS-visible-of-DC1.png)
 
 ---
 
