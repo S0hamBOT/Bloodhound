@@ -4,6 +4,8 @@
 
 This project demonstrates the successful implementation of BloodHound for Active Directory reconnaissance and analysis of the domain `sohamjadhav.in`. BloodHound was used to collect, visualize, and analyze the relationships between various Active Directory objects to identify potential attack paths and security vulnerabilities.
 
+___
+
 ## Project Components
 
 ### Tools Used
@@ -14,6 +16,8 @@ This project demonstrates the successful implementation of BloodHound for Active
 - Domain: `sohamjadhav.in`
 - Domain Controller: `dc1.sohamjadhav.in`
 - Operating System: Kali Linux (for running BloodHound)
+
+---
 
 ## Installation
 
@@ -35,6 +39,8 @@ The installation was performed following the official BloodHound Community Editi
    ```bash
    pip install bloodhound
    ```
+
+---
 
 ## Implementation Steps
 
@@ -73,6 +79,8 @@ Remember to change the namervers back after the activity.
 
 > **Note**: Without this configuration, BloodHound-python will fail with DNS resolution errors when trying to connect to `dc1.sohamjadhav.in`.
 
+---
+
 ### 2. Data Collection
 
 Data was collected using the Bloodhound-python ingestor with the following command:
@@ -88,6 +96,8 @@ Parameters used:
 - `--disable-autogc`: Disable automatic garbage collection
 - `-d sohamjadhav.in`: Target domain
 - `-c all`: Collect all available information
+
+---
 
 ### 3. Data Collection Results
 
@@ -112,7 +122,35 @@ The data was collected and stored in JSON format for analysis in the BloodHound 
 - `20250515082722_ous.json`
 - `20250515082722_users.json`
 
+---
+
 ### 4. Analysis with BloodHound GUI
+
+For BloodHound CE (BloodHound Community Edition)
+BloodHound CE includes everything (API + frontend + database) and runs in Docker containers. Here's how you can start it at localhost:8080:
+
+Launch BloodHound using Docker Compose
+```
+sudo docker-compose up -d
+```
+By default, the web interface will be available at:
+
+```
+http://localhost:8080
+```
+
+🔑 Default credentials:
+
+Username: `neo4j`
+Password: `BloodHound`
+
+The login page must look like this:
+
+![Extension Popup](bloodhound-login.png)
+
+To import the data, go to the file ingest section 
+![Extension Popup](FILE-INGEST.png)
+and upload the .json files that we earlier had captured.
 
 After importing the collected data into the BloodHound GUI, several important observations were made:
 
@@ -160,3 +198,13 @@ After importing the collected data into the BloodHound GUI, several important ob
 #### Operating System Info of my Domain Controller(DC)
 
 ![Extension Popup](OS-visible-of-DC1.png)
+
+---
+
+This project demonstrated the effective use of BloodHound for Active Directory reconnaissance on the domain sohamjadhav.in. From DNS configuration to data collection and analysis, we successfully mapped relationships, identified privileged accounts, and visualized the domain structure.
+
+This sets the stage for deeper analysis of attack paths and security improvements.
+
+Onward to the next phase. 
+
+Over n Out.
