@@ -1,0 +1,10 @@
+# Bloodhound specific
+*.log
+work/
+*.zip
+*.json.zip
+
+# General
+.DS_Store
+*.swp
+*~ 
